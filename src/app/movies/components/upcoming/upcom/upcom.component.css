@@ -1,0 +1,28 @@
+.Upcomings{
+  box-sizing: border-box;
+}
+
+.Upcoming{
+  background: aquamarine;
+  width: 20%;
+  height: 300px;
+  float: left;
+  color: green;
+  cursor: pointer;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: white;
+
+
+
+
+
+
+}
+
+.Upcoming img {
+  width: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+
+}

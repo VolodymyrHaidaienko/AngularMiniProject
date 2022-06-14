@@ -1,0 +1,50 @@
+<div class="Menu">
+  <div><img src="assets/images/blue_square.svg" height="100px" width="100px"></div>
+
+
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Movie
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem><a routerLink="">MoviePopular</a></button>
+          <button ngbDropdownItem><a routerLink="top-rateds">Top_Rated</a></button>
+          <button ngbDropdownItem><a routerLink="upcomings">Upcomings</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>TV
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem><a routerLink="movies-tv">MoviesTV</a></button>
+          <button ngbDropdownItem><a routerLink="">Серіали</a></button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="SingIn"><a routerLink="">Увійти</a></div>
+</div>
+
+<div class="Menu-upp">
+  <div class="Menu-upp1">
+    <h1>Ласкаво просимо.</h1>
+    <h3>Мільйони фільмів та серіалів. Дивіться прямо зараз.</h3>
+    <form>
+      <input>
+      <button>search</button>
+    </form>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+
+

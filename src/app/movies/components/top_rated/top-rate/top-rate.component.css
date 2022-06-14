@@ -1,0 +1,21 @@
+.Top_rateds {
+  box-sizing: border-box;
+}
+
+.Top_rated {
+  background: #696af3;
+  width: 20%;
+  height: 350px;
+  float: left;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: solid;
+  border-color: white;
+
+}
+
+.Top_rated img {
+  width: 100%;
+
+}

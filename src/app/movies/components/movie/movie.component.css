@@ -1,0 +1,22 @@
+.Movies {
+  box-sizing: border-box;
+
+}
+
+.Movie {
+  background: #696af3;
+  width: 20%;
+  height: 350px;
+  float: left;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid;
+  margin-bottom: 15px;
+
+}
+
+.Movie img {
+  width: 100%;
+}
