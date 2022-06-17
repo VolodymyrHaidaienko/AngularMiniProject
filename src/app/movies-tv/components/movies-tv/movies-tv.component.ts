@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MoviesService} from "../../servisec/movies.service";
-import {IMovies} from "../../../models/IMovies";
+import {IMoviesTv} from "../../../models/IMoviesTv";
 
 @Component({
   selector: 'app-movies-tv',
@@ -9,12 +9,25 @@ import {IMovies} from "../../../models/IMovies";
 })
 export class MoviesTVComponent implements OnInit {
 
-  moviesTv:IMovies[]
+  moviesTv:IMoviesTv[]
+
+  private pageNumber = 1
 
   constructor(private moviesService:MoviesService) { }
 
   ngOnInit(): void {
-    this.moviesService.getTvMovies().subscribe(value => this.moviesTv=value.results)
+    this.moviesService.getTvMovies(this.pageNumber).subscribe(value => this.moviesTv=value.results)
   }
+
+  pageNext():void {
+    this.pageNumber = this.pageNumber+1
+    this.moviesService.getTvMovies(this.pageNumber).subscribe(value => {
+      for (const valueElement of value.results) {
+        this.moviesTv.push(valueElement)
+      }
+    })
+
+  }
+
 
 }

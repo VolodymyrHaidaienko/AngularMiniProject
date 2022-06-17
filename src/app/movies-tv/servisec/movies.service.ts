@@ -10,14 +10,15 @@ export class MoviesService {
   private _bazeUrl='https://api.themoviedb.org/3'
   private api_key = '/?api_key=baf2249ecdf87f9614c0a7800fc3104d'
   private _urls = {
-    moviePopular:'/movie/popular',
+    movieNow_playing:'/movie/now_playing',
+    page:'&page='
 
   }
 
   constructor(private httpClient:HttpClient) { }
 
 
-  getTvMovies():Observable<any>{
-    return this.httpClient.get<any>(this._bazeUrl+this._urls.moviePopular+this.api_key)
+  getTvMovies(page:number):Observable<any>{
+    return this.httpClient.get<any>(this._bazeUrl+this._urls.movieNow_playing+this.api_key+this._urls.page+page)
   }
 }

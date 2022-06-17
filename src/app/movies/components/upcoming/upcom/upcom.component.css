@@ -12,17 +12,14 @@
   border-radius: 15px;
   border-style: solid;
   border-color: white;
-
-
-
-
-
-
 }
 
 .Upcoming img {
   width: 100%;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
+}
 
+.Upcoming a {
+  text-decoration: none;
 }

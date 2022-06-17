@@ -1,0 +1,8 @@
+<div class="Movies">
+  <div><img src='{{"https://image.tmdb.org/t/p/w500" + movie?.poster_path}}'></div>
+  <div class="Movie">
+    <h2>{{movie?.title}}</h2>
+    <h5>{{movie?.release_date|date:'MMMM d, y'}}</h5>
+    <h6>{{movie?.overview}}</h6>
+  </div>
+</div>

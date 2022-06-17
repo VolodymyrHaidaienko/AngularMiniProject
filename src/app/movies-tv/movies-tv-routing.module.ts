@@ -4,7 +4,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MoviesTVComponent} from "./components/movies-tv/movies-tv.component";
 
 const routes: Routes = [
-  {path:'movies-tv',component:MoviesTVComponent}
+  {path:'movie/movies-tv',component:MoviesTVComponent}
 ];
 
 @NgModule({

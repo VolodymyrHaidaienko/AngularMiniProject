@@ -4,11 +4,9 @@ import {HttpClientModule} from "@angular/common/http";
 
 
 
-
-
 let routes: Routes = [
   {path: '', loadChildren: () => import('./movies/movies.module').then(value => value.MoviesModule)},
-  {path:'', loadChildren:() => import('./movies-tv/movies-tv.module').then(value => value.MoviesTVModule)}
+  {path: '', loadChildren: () => import('./movies-tv/movies-tv.module').then(value => value.MoviesTVModule)}
 
 ]
 

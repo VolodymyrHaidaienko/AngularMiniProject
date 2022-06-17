@@ -1,8 +1,10 @@
 <div class="Upcomings">
   <div class="Upcoming">
-    <img src='{{"https://image.tmdb.org/t/p/w500"+movie.backdrop_path}}'>
-    <h3>{{movie.title}}</h3>
-    <h6>{{movie.release_date}}</h6>
+    <a routerLink="/{{movie.id}}">
+      <img src='{{"https://image.tmdb.org/t/p/w500"+movie?.backdrop_path}}'>
+      <h3>{{movie.title}}</h3>
+      <h6>{{movie.release_date}}</h6>
+    </a>
   </div>
 </div>
 

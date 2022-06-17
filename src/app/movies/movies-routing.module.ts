@@ -4,12 +4,15 @@ import {MoviesComponent} from "./components/movies/movies.component";
 import {TopRatedsComponent} from "./components/top_rated/top-rateds/top-rateds.component";
 import {UpcomingsComponent} from "./components/upcoming/upcomings/upcomings.component";
 import {HttpClientModule} from "@angular/common/http";
+import {MovieDetailsComponent} from "./components/movie-details/movie-details.component";
 
 
 const routes: Routes = [
   {path: '', component: MoviesComponent},
-  {path: 'top-rateds', component: TopRatedsComponent},
-  {path: 'upcomings', component: UpcomingsComponent},
+  {path: ':id', component: MovieDetailsComponent},
+  {path: 'movie/top_rated', component: TopRatedsComponent},
+  {path: 'movie/upcoming', component: UpcomingsComponent},
+
 ];
 
 @NgModule({
