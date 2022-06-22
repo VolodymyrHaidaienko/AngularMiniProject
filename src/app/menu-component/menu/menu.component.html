@@ -8,9 +8,9 @@
         <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Movie
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem><a routerLink="">MoviePopular</a></button>
-          <button ngbDropdownItem><a routerLink="/movie/top_rated">Top_Rated</a></button>
-          <button ngbDropdownItem><a routerLink="movie/upcoming">Upcomings</a></button>
+          <button ngbDropdownItem (click)="counter=0"><a routerLink="">MoviePopular</a></button>
+          <button ngbDropdownItem (click)="counter=0"><a routerLink="/movie/top_rated">Top_Rated</a></button>
+          <button ngbDropdownItem (click)="counter=0"><a routerLink="movie/upcoming">Upcomings</a></button>
         </div>
       </div>
     </div>
@@ -21,29 +21,35 @@
         <button type="button" class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>TV
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem><a routerLink="movie/movies-tv">MoviesTV</a></button>
+          <button ngbDropdownItem (click)="counter=0"><a routerLink="movie/movies-tv">MoviesTV</a></button>
           <button ngbDropdownItem>Something</button>
           <button ngbDropdownItem>Something else is here</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="SingIn"><a routerLink="">Увійти</a></div>
+  <div class="SingIn"><a routerLink="user/register">Реєстрація</a></div>
+  <div class="SingIn"><a routerLink="user/login">Увійти</a></div>
 </div>
 
 <div class="Menu-upp">
   <div class="Menu-upp1">
     <h1>Ласкаво просимо.</h1>
     <h3>Мільйони фільмів та серіалів. Дивіться прямо зараз.</h3>
-    <form>
-      <input>
-      <button>search</button>
-    </form>
-  </div>
+   </div>
 </div>
+<form #myForm="ngForm" class="Search">
+  <input [(ngModel)]="movieSearch.title" #title="ngModel" name="title">
+  <button (click)="search(myForm)">search</button>
+</form>
 
 
-<router-outlet></router-outlet>
+
+<ng-container *ngIf="counter>0; else second"><app-movie-search *ngFor="let movie of movies" [movie]="movie"></app-movie-search>
+  <ng-container *ngIf="movies.length>=20"><button class="MovieButton" (click)="pageCounter()">Next Page</button></ng-container>
+
+</ng-container>
+<ng-template #second><router-outlet></router-outlet></ng-template>
 
 
 

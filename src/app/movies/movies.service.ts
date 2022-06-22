@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {IMovies} from "../models/IMovies";
+
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +35,6 @@ export class MoviesService {
   getUpcoming(page:number):Observable<any>{
     return this.httpClient.get<any>(this._bazeUrl+this._urls.movieUpcoming+this.api_key+this._urls.page+page)
   }
+
 
 }

@@ -12,6 +12,7 @@ import {UpcomComponent} from './components/upcoming/upcom/upcom.component';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
 
 
+
 @NgModule({
   declarations: [
     MoviesComponent,

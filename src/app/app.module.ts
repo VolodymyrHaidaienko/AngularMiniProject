@@ -7,6 +7,8 @@ import { MenuComponent } from './menu-component/menu/menu.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { MovieSearchComponent } from './menu-component/movie-search/movie-search.component';
+import {MovieSearchService} from "./servisec/movie-search.service";
 
 
 @NgModule({
@@ -14,6 +16,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   declarations: [
     AppComponent,
     MenuComponent,
+    MovieSearchComponent,
   ],
 
 
@@ -25,7 +28,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [MovieSearchService]
 
 })
 export class AppModule { }

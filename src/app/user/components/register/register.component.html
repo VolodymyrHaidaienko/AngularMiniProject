@@ -1,0 +1,7 @@
+<p>register works!</p>
+<form [formGroup]="form">
+  <div>username<input formControlName="username"></div>
+  <div>password<input formControlName="password"></div>
+  <div>confirmpassword<input formControlName="confirmpassword"></div>
+  <button (click)="register()">Register</button>
+</form>
