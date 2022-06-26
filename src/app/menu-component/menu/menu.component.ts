@@ -5,7 +5,6 @@ import {IMoviesTv} from "../../models/IMoviesTv";
 import {MovieSearchService} from "../../servisec/movie-search.service";
 
 
-
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -26,15 +25,17 @@ export class MenuComponent implements OnInit {
   movies: IMoviesTv[]
   counter = 0
   counterPage = 1
-  stingCounter = ''
+  stringCounter = ''
+  filmcatch: IMoviesTv = {}
+
 
 
   search(myForm: NgForm) {
     // @ts-ignore
     this.movieSearchService.movieSearch(myForm.form.value.title).subscribe(value => this.movies = value.results),
-      this.stingCounter = myForm.form.value.title,
+      this.stringCounter = myForm.form.value.title,
       myForm.reset(),
-      this.counter = this.counter + 1
+      this.counter = 1
 
 
   }
@@ -42,7 +43,7 @@ export class MenuComponent implements OnInit {
   pageCounter() {
     this.counterPage = this.counterPage + 1
 
-    this.movieSearchService.movieSearchButton(this.counterPage, this.stingCounter).subscribe(value => {
+    this.movieSearchService.movieSearchButton(this.counterPage, this.stringCounter).subscribe(value => {
         // @ts-ignore
         for (let valueElement of value.results) {
           this.movies.push(valueElement)
@@ -51,6 +52,14 @@ export class MenuComponent implements OnInit {
     )
 
   }
+
+  filmemmit(movie: IMoviesTv) {
+    this.filmcatch = movie
+    this.counter=2
+
+  }
+
+
 }
 
 

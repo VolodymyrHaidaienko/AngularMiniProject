@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IMoviesTv} from "../../models/IMoviesTv";
+import {MenuComponent} from "../menu/menu.component";
 
 @Component({
   selector: 'app-movie-search',
@@ -11,10 +12,22 @@ export class MovieSearchComponent implements OnInit {
   @Input()
   movie:IMoviesTv
 
+  @Output()
+  filmEmitter= new EventEmitter<IMoviesTv>();
 
-  constructor() { }
+
+  constructor(private menuComponent:MenuComponent) { }
 
   ngOnInit(): void {
   }
 
+  movieDetails() {
+    this.menuComponent.counter=2
+  }
+
+
+  eventclick(movie: IMoviesTv) {
+    this.filmEmitter.emit(movie)
+
+  }
 }

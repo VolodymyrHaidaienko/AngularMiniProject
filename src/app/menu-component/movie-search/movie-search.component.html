@@ -3,5 +3,10 @@
     <img src='{{"https://image.tmdb.org/t/p/w500"+ movie?.poster_path}}'>
     <h4>{{movie?.title}}</h4>
     <h6>{{movie?.release_date}}</h6>
+    <a routerLink="/{{movie?.id}}">
+      <button (click)="movieDetails()">Details Movie DDosServer</button>
+    </a>
+    <button (click)="eventclick(movie)">catch Movie Emitter</button>
   </div>
 </div>
+

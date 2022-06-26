@@ -36,7 +36,7 @@
   <div class="Menu-upp1">
     <h1>Ласкаво просимо.</h1>
     <h3>Мільйони фільмів та серіалів. Дивіться прямо зараз.</h3>
-   </div>
+  </div>
 </div>
 <form #myForm="ngForm" class="Search">
   <input [(ngModel)]="movieSearch.title" #title="ngModel" name="title">
@@ -44,12 +44,23 @@
 </form>
 
 
+<ng-container *ngIf="counter===2; else second">
+  <div> <img src='{{"https://image.tmdb.org/t/p/w500"+filmcatch?.poster_path}}'></div>
+  {{filmcatch.title}}
+  {{filmcatch.release_date}}</ng-container>
+<ng-template #second>
+  <ng-container *ngIf="counter===1; else second2">
+    <app-movie-search *ngFor="let movie of movies" [movie]="movie" (filmEmitter)="filmemmit($event)"></app-movie-search>
+    <ng-container *ngIf="movies.length>=20">
+      <button class="MovieButton" (click)="pageCounter()">Next Page</button>
+    </ng-container>
+  </ng-container>
+  <ng-template #second2><router-outlet></router-outlet></ng-template>
+</ng-template>
 
-<ng-container *ngIf="counter>0; else second"><app-movie-search *ngFor="let movie of movies" [movie]="movie"></app-movie-search>
-  <ng-container *ngIf="movies.length>=20"><button class="MovieButton" (click)="pageCounter()">Next Page</button></ng-container>
 
-</ng-container>
-<ng-template #second><router-outlet></router-outlet></ng-template>
+
+
 
 
 

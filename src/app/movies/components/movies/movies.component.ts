@@ -18,13 +18,13 @@ export class MoviesComponent implements OnInit {
 
   constructor(private moviesService:MoviesService) { }
 
-  ngOnInit(): void {
-    this.moviesService.getMoviesPopular(this.pageNumber).subscribe(value => this.movies=value.results)
+   ngOnInit(): void {
+     this.moviesService.getMoviesPopular(this.pageNumber).subscribe(value => this.movies=value.results)
   }
 
   CountPage():void {
     this.pageNumber=this.pageNumber+1
-    this.moviesService.getMoviesPopular(this.pageNumber).subscribe(value => {
+     this.moviesService.getMoviesPopular(this.pageNumber).subscribe(value => {
       for (const valueElement of value.results) {
         this.movies.push(valueElement)
       }
