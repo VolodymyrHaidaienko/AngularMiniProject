@@ -1,0 +1,10 @@
+<div class="Movies">
+  <div class="Movie">
+    <a routerLink="/{{movieTv.id}}">
+      <div><img src='{{"https://image.tmdb.org/t/p/w500" + movieTv?.poster_path}}'></div>
+      <h2>{{movieTv.title}}</h2>
+      <h5>{{movieTv.release_date}}</h5>
+    </a>
+
+  </div>
+</div>

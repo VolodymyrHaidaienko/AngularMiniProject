@@ -8,7 +8,6 @@ import {MovieSearchComponent} from "./menu-component/movie-search/movie-search.c
 let routes: Routes = [
   {path:'movie', component:MovieSearchComponent},
   {path: '', loadChildren: () => import('./movies/movies.module').then(value => value.MoviesModule)},
-  {path: '', loadChildren: () => import('./movies-tv/movies-tv.module').then(value => value.MoviesTVModule)},
   {path:'user', loadChildren:() => import('./user/user.module').then(value => value.UserModule)}
 
 ]

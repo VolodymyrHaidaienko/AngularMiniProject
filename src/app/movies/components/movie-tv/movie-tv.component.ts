@@ -6,12 +6,13 @@ import {IMoviesTv} from "../../../models/IMoviesTv";
   templateUrl: './movie-tv.component.html',
   styleUrls: ['./movie-tv.component.css']
 })
-export class MovieTVComponent implements OnInit {
-  @Input()
-  movie: IMoviesTv
+export class MovieTvComponent implements OnInit {
 
-  constructor() {
-  }
+
+  @Input()
+  movieTv:IMoviesTv
+
+  constructor() { }
 
   ngOnInit(): void {
   }

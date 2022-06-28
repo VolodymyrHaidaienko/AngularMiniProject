@@ -30,7 +30,8 @@ export class MenuComponent implements OnInit {
 
 
 
-  search(myForm: NgForm) {
+  search(myForm: NgForm):void {
+
     // @ts-ignore
     this.movieSearchService.movieSearch(myForm.form.value.title).subscribe(value => this.movies = value.results),
       this.stringCounter = myForm.form.value.title,
@@ -40,7 +41,7 @@ export class MenuComponent implements OnInit {
 
   }
 
-  pageCounter() {
+  pageCounter():void {
     this.counterPage = this.counterPage + 1
 
     this.movieSearchService.movieSearchButton(this.counterPage, this.stringCounter).subscribe(value => {
@@ -53,7 +54,7 @@ export class MenuComponent implements OnInit {
 
   }
 
-  filmemmit(movie: IMoviesTv) {
+  filmemmit(movie: IMoviesTv):void {
     this.filmcatch = movie
     this.counter=2
 

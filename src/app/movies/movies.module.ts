@@ -10,6 +10,9 @@ import {TopRateComponent} from './components/top_rated/top-rate/top-rate.compone
 import {UpcomingsComponent} from './components/upcoming/upcomings/upcomings.component';
 import {UpcomComponent} from './components/upcoming/upcom/upcom.component';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
+import {MoviesTVComponent} from "./components/movies-tv/movies-tv.component";
+import { MovieTvComponent } from './components/movie-tv/movie-tv.component';
+
 
 
 
@@ -21,7 +24,10 @@ import {MovieDetailsComponent} from './components/movie-details/movie-details.co
     TopRateComponent,
     UpcomingsComponent,
     UpcomComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    MoviesTVComponent,
+    MovieTvComponent,
+
 
   ],
   imports: [

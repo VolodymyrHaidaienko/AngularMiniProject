@@ -16,6 +16,7 @@ export class MoviesService {
     movieTopRated:'/movie/top_rated',
     movieUpcoming:'/movie/upcoming',
     singleMovie:'/movie',
+    movieNow_playing:'/movie/now_playing',
     page:'&page='
   }
 
@@ -37,4 +38,7 @@ export class MoviesService {
   }
 
 
+  getTvMovies(pageNumber: number):Observable<any> {
+    return this.httpClient.get<any>(this._bazeUrl+this._urls.movieNow_playing+this.api_key+this._urls.page+pageNumber)
+  }
 }
